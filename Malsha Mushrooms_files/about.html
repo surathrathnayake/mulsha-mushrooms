@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Malsha Mushrooms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+      background: #f6f5f3;
+      color: #2e2e2e;
+      opacity: 0;               /* For fade-in effect */
+      transition: opacity 0.6s ease-in;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+
+    header {
+      background: #2e7d32;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;        
+      justify-content: center; 
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      background: #388e3c;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .about-section {
+      padding: 3rem;
+      max-width: 900px;
+      margin: 2rem auto 0;
+      line-height: 1.8;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;            
+      transform: translateY(40px); 
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    footer {
+      background: #4d3b2f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="C:\Users\User\Pictures\mush/unnamed.jpg" alt="Malsha Mushrooms Logo"> 
+    <div>
+      <h1 style="margin: 0;">Malsha Mushrooms</h1>
+      <p style="margin: 0;">Fresh & Organic Mushrooms</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#products">Shop</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <section class="about-section">
+    <h2>About Malsha Mushrooms</h2>
+    <p>
+      At Malsha Mushrooms, we cultivate a variety of fresh, organic mushrooms using sustainable farming methods. 
+      Each mushroom is carefully grown in optimal conditions to ensure rich flavor, superior texture, and high nutritional value.
+    </p>
+
+       <img src="C:\Users\User\Pictures\mush/360_F_193754586_JZdkNclSGiGoojMrQ9Y9S3dSaEGcgwYq.jpg" alt="Mushroom farm" style="width: 100%; border-radius: 10px; margin: 1.5rem 0;" />
+
+    <p>
+      Whether you’re cooking a gourmet meal or enjoying a healthy snack, our mushrooms add natural goodness and earthy taste to every dish.
+      We’re committed to providing clean, pesticide-free mushrooms that support your well-being and promote eco-friendly agriculture.
+    </p>
+
+       <img src="C:\Users\User\Pictures\mush/1600x1000-5-gallon-bucket-1.webp" alt="Close-up of fresh mushrooms" style="width: 100%; border-radius: 10px; margin: 1.5rem 0;" />    
+ 
+    <p>
+      Thank you for choosing Malsha Mushrooms as your trusted source for healthy, delicious produce. We believe in quality, sustainability, and community.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Malsha Mushrooms. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Fade in page on load
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+
+    // Scroll animation for about section
+    window.addEventListener('scroll', function() {
+      const section = document.querySelector('.about-section');
+      if (!section) return;
+
+      const sectionTop = section.getBoundingClientRect().top;
+      const screenHeight = window.innerHeight;
+
+      if (sectionTop < screenHeight - 100) {
+        section.style.opacity = 1;
+        section.style.transform = 'translateY(0)';
+      }
+    });
+  </script>
+
+</body>
+</html>

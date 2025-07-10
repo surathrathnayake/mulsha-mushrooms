@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="Unnmnj34Qn9pb2LGSnK_TR6bCBmCk0IGY-6z4Zn4IFs" />
+  <title>Malsha Mushrooms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+      background: #f1f8e9;
+      color:  #2e2e2e;
+    }
+    header {
+      background: #2e7d32;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 1rem; 
+      flex-wrap;
+}
+header img {
+  height: 50px;
+}
+    @media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+    nav {
+      background: #388e3c;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 4rem 1rem;
+      background: linear-gradient(120deg, #a8e6cf, #dcedc1, #ffd3b6);
+      color:  #2e2e2e;
+      text-align: center;
+      position: relative;
+      
+}
+      .hero .overlay {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+      border-radius: 12px;
+      display: inline-block;
+      max-width:600px;
+      
+}
+    @media (max-width: 600px) {
+  .hero .overlay {
+    padding: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+   .hero .overlay h2 {
+  color: #4e342e; 
+}
+
+.hero .overlay p {
+  color: #fef9f4; 
+ }
+
+}
+  
+ 
+    .hero-button {
+      background:#ffa726;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #ff704d;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      transition: background 0.3s;
+   }
+
+.hero-button:hover {
+  background: #ff5722;
+}
+    .section {
+      padding: 2rem;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+    }
+    
+   @media (max-width: 600px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .product {
+    padding: 1rem;
+  }
+}
+
+    .product {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      max-height: 300px; 
+      border-radius: 8px;
+      object-fit: cover
+    }
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .contact {
+      background: #edeae4;
+      padding: 2rem;
+      text-align: center;
+    }
+    footer {
+      background: #4d3b2f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    button {
+      background: #705847;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    html {
+      scroll-behavior: smooth;
+}  
+     body {
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+}
+
+body.loaded {
+  opacity: 1;
+  
+}
+
+
+  </style>
+</head>
+<body>
+
+<header style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+  <img src="C:\Users\User\Pictures\mush/unnamed.jpg" alt="Malsha Mushrooms Logo" style="height: 60px;">
+  <div>
+    <h1 style="margin: 0;">Malsha Mushrooms</h1>
+    <p style="margin: 0;">Fresh & Organic Mushrooms</p>
+  </div>
+</header>
+
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="#products">Shop</a>
+  <a href="#contact">Contact</a>
+  <button onclick="showCart()" style="position: fixed; top: 20px; right: 20px;">🛒 Cart (<span id="cart-count">0</span>)</button>
+</nav>
+
+<section class="hero">
+  <div class="overlay">
+    <h2>Healthy. Natural. Home-Grown.</h2>
+     <p>Explore our collection of fresh mushrooms grown with care.</p>   
+    <button onclick="alert('Thank you for visiting Malsha Mushrooms!')">Say Hello</button>
+  </div>
+</section>
+
+<section id="products" class="section">
+  <h2>Our Mushrooms</h2>
+  <div class="products">
+    <div class="product">
+      <h3>Oyster Mushrooms</h3>          
+      <img src="C:\Users\User\Pictures\mush/360_F_193754586_JZdkNclSGiGoojMrQ9Y9S3dSaEGcgwYq.jpg" alt="Oyster Mushrooms">
+      <p>Rs. 160 / 150g</p>
+      <button class="add-to-cart" data-name="Oyster Mushrooms" data-price="500">Add to Cart</button>
+
+    </div>
+    <div class="product">
+      <h3>Pink Oyster Mushrooms</h3>
+      <img src="C:\Users\User\Pictures\mush/1600x1000-5-gallon-bucket-1.webp" alt="Pink Mushrooms">
+      <p>Rs. 800 / 250g</p>
+      <button class="add-to-cart" data-name="Pink Oyster Mushrooms" data-price="800">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Phone/WhatsApp: <a href="tel:+94714223535">071 422 3535</a></p>
+  <p>Follow us on social media (add links here)</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Malsha Mushrooms. All rights reserved.</p>
+  <div>
+    <a href="#">FB</a> | 
+    <a href="#">IG</a> | 
+    <a href="#">TW</a> 
+  </div>
+</footer>
+  
+  <div id="cart" style="display:none; background:white; padding:1rem; position:fixed; top:80px; right:20px; width:250px; box-shadow:0 0 10px rgba(0,0,0,0.2); z-index:2000;">
+  <h3>Your Cart</h3>
+  <ul id="cart-items"></ul>
+  <p>Total: Rs. <span id="cart-total">0</span></p>
+  <button onclick="hideCart()">Close</button>
+</div>
+  
+
+<script>
+  let cart = [];
+
+  function showCart() {
+    document.getElementById('cart').style.display = 'block';
+    updateCart();
+  }
+
+  function hideCart() {
+    document.getElementById('cart').style.display = 'none';
+  }
+
+  function updateCart() {
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const cartCount = document.getElementById('cart-count');
+    cartItems.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.name} - Rs. ${item.price}`;
+      cartItems.appendChild(li);
+      total += item.price;
+    });
+
+    cartTotal.textContent = total;
+    cartCount.textContent = cart.length;
+  }
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const name = button.getAttribute('data-name');
+      const price = parseInt(button.getAttribute('data-price'));
+      cart.push({ name, price });
+      updateCart();
+    });
+  });
+</script>
+<script>
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
+</script>
+
+
+</body>
+</html>
